@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<DocumentFragment>
+  <header>
+    <h3
+      class="fancy-h3"
+      data-testid="h3id"
+    >
+      Hello
+    </h3>
+  </header>
+</DocumentFragment>
+`;

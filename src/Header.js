@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Header({ text }) {
+export default function Header({ content }) {
   return (
     <header>
-      <h1 data-testid="h1tag" className="fancy-h1">
-        {text}
-      </h1>
+      <h3 data-testid="h3id" className="fancy-h3">
+        {content}
+      </h3>
     </header>
   );
 }
