@@ -7,7 +7,9 @@ const Clickers = () => {
     setCount(count + 1)
   }
   const decrease = () => {
-    setCount(count - 1)
+    setTimeout(() => {
+      setCount(count - 1)
+    }, 1000)
   }
   return (
     <div>

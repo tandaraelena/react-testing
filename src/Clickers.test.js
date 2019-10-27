@@ -15,10 +15,10 @@ it('increasement count', () => {
   fireEvent.click(getByText(/up/i))
   expect(getByTestId('clickersId')).toHaveTextContent('1')
 })
-it('decrement count', async () => {
-  const { getByText, getByTestId } = render(<Clickers/>)
+it('decrement count delayed', async () => {
+  const { getByText } = render(<Clickers/>)
   fireEvent.click(getByText(/down/i))
 
   const countSpan = await waitForElement(() => getByText('-1'))
-  expect(countSpan).toHaveTextContent('1')
+  expect(countSpan).toHaveTextContent('-1')
 })
