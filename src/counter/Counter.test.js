@@ -40,3 +40,8 @@ it('can have initial state', () => {
   expect(getByTestId('count')).toHaveTextContent('7')
 })
 
+it('can have custom store', () => {
+  const store = createStore(() => ({ count: 26 }))
+  const { getByTestId } = renderWithRedux(<Counter />, { store });
+  expect(getByTestId('count')).toHaveTextContent('26')
+})
