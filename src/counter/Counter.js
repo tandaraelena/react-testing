@@ -11,12 +11,13 @@ function Counter({ increment, decrement, count }) {
   );
 }
 
-export default connect(
-  state => ({
-    count: state.count
-  }),
-  dispatch => ({
-    increment: () => dispatch({ type: "INCREMENT" }),
-    decrement: () => dispatch({ type: "DECREMENT" })
-  })
-)(Counter);
+const mapState = state => ({
+  count: state.count
+})
+
+const dispatchToProps = dispatch => ({
+  increment: () => dispatch({ type: "INCREMENT" }),
+  decrement: () => dispatch({ type: "DECREMENT" })
+})
+
+export default connect(mapState, dispatchToProps)(Counter);
