@@ -23,3 +23,20 @@ it('renders with redux', () => {
   expect(getByTestId('count')).toHaveTextContent('0')
 })
 
+it('can increment', () => {
+  const {getByTestId, getByText} = renderWithRedux(<Counter/>);
+  fireEvent.click(getByText('+'));
+  expect(getByTestId('count')).toHaveTextContent('1');
+})
+
+it('can decrement', () => {
+  const {getByTestId, getByText} = renderWithRedux(<Counter/>);
+  fireEvent.click(getByText('-'));
+  expect(getByTestId('count')).toHaveTextContent('-1');
+})
+
+it('can have initial state', () => {
+  const { getByTestId } = renderWithRedux(<Counter />, {initialState: {count: 7}});
+  expect(getByTestId('count')).toHaveTextContent('7')
+})
+
